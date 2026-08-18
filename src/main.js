@@ -2,6 +2,8 @@ import './styles.css';
 import menuItems from './data/menu.json';
 import { business, featuredDishes } from './content.js';
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, '')}`;
+
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
@@ -64,7 +66,7 @@ const normalizedCategory = (category) => category;
 const featuredDishCard = (dish, index, isClone = false) => `
   <article class="dish-card dish-${dish.color}" ${isClone ? 'aria-hidden="true"' : 'role="listitem"'}>
     <div class="dish-photo${dish.imageFit === 'contain' ? ' dish-photo--contain' : ''}">
-      <img src="${escapeHtml(dish.image)}" alt="${isClone ? '' : escapeHtml(dish.imageAlt)}" loading="lazy">
+      <img src="${escapeHtml(assetPath(dish.image))}" alt="${isClone ? '' : escapeHtml(dish.imageAlt)}" loading="lazy">
       <div class="dish-index">0${index + 1}</div>
     </div>
     <div class="dish-copy">
@@ -83,7 +85,7 @@ app.innerHTML = `
   <header class="site-header" data-header>
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="Hagere Ethiopian Restaurant, home">
-        <img class="brand-logo" src="/assets/pics/logo.png" alt="Hagere Ethiopian Restaurant" width="1682" height="935" fetchpriority="high" />
+        <img class="brand-logo" src="${assetPath('assets/pics/logo.png')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" fetchpriority="high" />
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
@@ -138,12 +140,12 @@ app.innerHTML = `
 
         <div class="hero-visual reveal" aria-label="Design concept imagery of an Ethiopian communal meal">
           <div class="hero-arch">
-            <img src="/assets/generated/hero-platter-concept.webp" alt="Concept image of an abundant Ethiopian platter with injera, stews, vegetables, chicken and tibs" width="1536" height="1024" fetchpriority="high" />
+            <img src="${assetPath('assets/generated/hero-platter-concept.webp')}" alt="Concept image of an abundant Ethiopian platter with injera, stews, vegetables, chicken and tibs" width="1536" height="1024" fetchpriority="high" />
             <span class="image-note">Concept image · owner photo to replace</span>
           </div>
           <div class="arch-thread" aria-hidden="true"><span></span></div>
           <div class="coffee-vignette">
-            <img src="/assets/generated/coffee-hospitality-concept.webp" alt="Concept still life of a jebena and small coffee cups on a woven tray" width="1122" height="1402" />
+            <img src="${assetPath('assets/generated/coffee-hospitality-concept.webp')}" alt="Concept still life of a jebena and small coffee cups on a woven tray" width="1122" height="1402" />
             <div><span lang="am">ቡና</span><small>Coffee & connection</small></div>
           </div>
           <div class="floating-seal" aria-hidden="true">${weaveMark()}<span>HAGERE<br />SIOUX FALLS</span></div>
@@ -199,15 +201,15 @@ app.innerHTML = `
       <div class="content-shell meaning-grid">
         <div class="art-gallery reveal" aria-label="A gallery of Ethiopian artwork displayed at Hagere">
           <figure class="art-frame art-frame-tall">
-            <img src="/assets/pics/art.png" alt="Tall Ethiopian artwork depicting three traditional musicians" width="724" height="2172" loading="lazy" />
+            <img src="${assetPath('assets/pics/art.png')}" alt="Tall Ethiopian artwork depicting three traditional musicians" width="724" height="2172" loading="lazy" />
             <figcaption><span>01</span> Music & memory</figcaption>
           </figure>
           <figure class="art-frame art-frame-coffee">
-            <img src="/assets/pics/art3.jpg" alt="Ethiopian artwork depicting a traditional coffee ceremony" width="540" height="720" loading="lazy" />
+            <img src="${assetPath('assets/pics/art3.jpg')}" alt="Ethiopian artwork depicting a traditional coffee ceremony" width="540" height="720" loading="lazy" />
             <figcaption><span>02</span> Coffee & welcome</figcaption>
           </figure>
           <figure class="art-frame art-frame-injera">
-            <img src="/assets/pics/art4.jpg" alt="Colourful Ethiopian artwork depicting injera being prepared" width="1024" height="1280" loading="lazy" />
+            <img src="${assetPath('assets/pics/art4.jpg')}" alt="Colourful Ethiopian artwork depicting injera being prepared" width="1024" height="1280" loading="lazy" />
             <figcaption><span>03</span> Craft & tradition</figcaption>
           </figure>
           <div class="art-gallery-seal" aria-hidden="true">${weaveMark()}<span>ART AT<br />HAGERE</span></div>
@@ -236,7 +238,7 @@ app.innerHTML = `
         <div class="veg-photo-stage reveal">
           <div class="veg-photo-orbit" aria-hidden="true"></div>
           <figure class="veg-feast-photo">
-            <img src="/assets/pics/food.png" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
+            <img src="${assetPath('assets/pics/food.png')}" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
             <figcaption><small>One table · many flavours</small><strong>Made to share</strong></figcaption>
           </figure>
           <div class="veg-callout veg-callout-one"><i></i><span><strong>Misir Wat</strong><small>Red lentils + berbere</small></span></div>
@@ -253,7 +255,7 @@ app.innerHTML = `
         <div class="coffee-visual reveal">
           <div class="coffee-halo" aria-hidden="true"></div>
           <figure class="coffee-photo">
-            <img src="/assets/pics/coffee.png" alt="Traditional Ethiopian coffee ceremony with a steaming jebena surrounded by small cups" width="1085" height="1450" loading="lazy" />
+            <img src="${assetPath('assets/pics/coffee.png')}" alt="Traditional Ethiopian coffee ceremony with a steaming jebena surrounded by small cups" width="1085" height="1450" loading="lazy" />
             <figcaption><span lang="am">ቡና</span><small>Prepared to be shared</small></figcaption>
           </figure>
           <div class="steam steam-one"></div><div class="steam steam-two"></div>
@@ -276,7 +278,7 @@ app.innerHTML = `
     <section class="gatherings section" id="gatherings" aria-labelledby="gatherings-title">
       <div class="content-shell">
         <div class="gathering-card reveal">
-          <img src="/assets/pics/inside-new%20picture.png" alt="Inside Hagere Ethiopian Restaurant, showing the dining room, coffee bar and colourful Hagere sign" width="1774" height="887" loading="lazy" />
+          <img src="${assetPath('assets/pics/inside-new%20picture.png')}" alt="Inside Hagere Ethiopian Restaurant, showing the dining room, coffee bar and colourful Hagere sign" width="1774" height="887" loading="lazy" />
           <div class="gathering-overlay"></div>
           <div class="gathering-copy">
             <p class="eyebrow light">Bring everyone <span>05</span></p>
@@ -327,7 +329,7 @@ app.innerHTML = `
     <div class="content-shell">
       <div class="footer-top">
         <div>
-          <a class="brand brand-light" href="#top" aria-label="Hagere Ethiopian Restaurant, back to top"><img class="brand-logo brand-logo-footer" src="/assets/pics/logo.png" alt="Hagere Ethiopian Restaurant" width="1682" height="935" loading="lazy" /></a>
+          <a class="brand brand-light" href="#top" aria-label="Hagere Ethiopian Restaurant, back to top"><img class="brand-logo brand-logo-footer" src="${assetPath('assets/pics/logo.png')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" loading="lazy" /></a>
           <p>Modern hospitality shaped by Ethiopian tradition.</p>
         </div>
         <div class="footer-invite"><span lang="am">እንብላ</span><small>Let’s eat.</small></div>
