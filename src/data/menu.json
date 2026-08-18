@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "name": "Hagere Exclusive",
+    "description": "A combination of house meat and vegetable favourites, served together with injera.",
+    "category": "Combinations",
+    "ingredients": "",
+    "tags": ["House signature", "Shareable"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 2,
+    "name": "Vegetarian Exclusive",
+    "description": "Azifah, shiro wat, misir wat, gomen, fosolia, tikil gomen and yekik alicha, garnished with selata and served with injera.",
+    "category": "Combinations",
+    "ingredients": "",
+    "tags": ["Vegetarian", "Shareable"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 3,
+    "name": "Meat Combination",
+    "description": "A satisfying selection of Hagere's seasoned meat dishes served together over injera.",
+    "category": "Combinations",
+    "ingredients": "",
+    "tags": ["Shareable"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Combination",
+    "description": "A colourful selection of house vegetable dishes, each prepared and seasoned separately.",
+    "category": "Combinations",
+    "ingredients": "",
+    "tags": ["Vegetarian", "Shareable"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 5,
+    "name": "Alicha Sega Wat",
+    "description": "Tender beef cubes simmered in kibe with onion, turmeric and aromatic Ethiopian spices.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, kibe, onion, turmeric, spices",
+    "tags": ["Mild"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 6,
+    "name": "Doro Wat",
+    "description": "Chicken simmered in kibe, berbere and onion, traditionally served with a hard-boiled egg.",
+    "category": "Meat Dishes",
+    "ingredients": "Chicken, egg, kibe, berbere, onion",
+    "tags": ["Spicy", "Classic"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 7,
+    "name": "Key Sega Wat",
+    "description": "Tender beef cubes simmered in berbere, onion and a warming blend of spices.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, berbere, onion, spices",
+    "tags": ["Spicy"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 8,
+    "name": "Zilzil Tibs",
+    "description": "Long strips of beef pan-fried with onions and jalapeño peppers.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, onion, jalapeño",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 9,
+    "name": "Kitfo",
+    "description": "Finely chopped lean beef seasoned with mitmita, cardamom and kibe. Served raw or lightly cooked with gomen, ayeb and selata.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, mitmita, cardamom, kibe",
+    "tags": ["Spicy", "Ask about preparation"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 10,
+    "name": "Yebere Sega Tibs",
+    "description": "Pan-fried beef cubes with jalapeños, onion and fresh rosemary, garnished with selata and served with injera.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, jalapeño, onion, rosemary",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 11,
+    "name": "Yawaze Tibs",
+    "description": "Spicy pan-fried beef cubes with jalapeños, onion, fresh rosemary and awaze, served with selata and injera.",
+    "category": "Meat Dishes",
+    "ingredients": "Beef, jalapeño, onion, rosemary, awaze",
+    "tags": ["Spicy"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 12,
+    "name": "Yebeg Sega Tibs",
+    "description": "Pan-fried lamb cubes with jalapeños, onion and fresh rosemary, garnished with selata and served with injera.",
+    "category": "Meat Dishes",
+    "ingredients": "Lamb, jalapeño, onion, rosemary",
+    "tags": [],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 13,
+    "name": "Kay Sir",
+    "description": "Beets cooked with garlic, onions, potatoes and ginger.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Beets, garlic, onion, potato, ginger",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 14,
+    "name": "Azifah",
+    "description": "Whole brown lentils blended with onion, green pepper and spices.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Brown lentils, onion, green pepper, spices",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 15,
+    "name": "Fosolia",
+    "description": "Lightly spiced string beans cooked with carrots and onion.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "String beans, carrots, onion",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 16,
+    "name": "Gomen",
+    "description": "Chopped collard greens cooked with fresh garlic and onion.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Collard greens, garlic, onion",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 17,
+    "name": "Misir Wat",
+    "description": "Red split lentils cooked with onion, berbere and herbs.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Red lentils, onion, berbere, herbs",
+    "tags": ["Vegetarian", "Spicy"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 18,
+    "name": "Shiro Wat",
+    "description": "Ground peas cooked with berbere onion and seasoned with garlic and ginger.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Ground peas, berbere, onion, garlic, ginger",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 19,
+    "name": "Tikil Gomen",
+    "description": "Lightly spiced cabbage, carrots and potatoes.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Cabbage, carrots, potatoes",
+    "tags": ["Vegetarian", "Mild"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 20,
+    "name": "Yekik Alicha",
+    "description": "Yellow split peas cooked with onion, turmeric and herbs.",
+    "category": "Vegetarian Dishes",
+    "ingredients": "Yellow split peas, onion, turmeric, herbs",
+    "tags": ["Vegetarian", "Mild"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 21,
+    "name": "Injera Fitfit",
+    "description": "Chopped injera mixed into a lively, spicy sauce.",
+    "category": "Breakfast",
+    "ingredients": "Injera, spices",
+    "tags": ["Spicy"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 22,
+    "name": "Genfo",
+    "description": "Traditional Ethiopian porridge cooked until thick and served with seasoned butter and yogurt.",
+    "category": "Breakfast",
+    "ingredients": "Barley flour, seasoned butter, yogurt",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 23,
+    "name": "Enkulal Firfir",
+    "description": "Scrambled eggs with tomato, onion and jalapeño pepper, served with bread.",
+    "category": "Breakfast",
+    "ingredients": "Egg, tomato, onion, jalapeño",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 24,
+    "name": "Injera",
+    "description": "Ethiopian sourdough flatbread made from a mixture of teff and wheat flour.",
+    "category": "Side Orders",
+    "ingredients": "Teff flour, wheat flour",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 25,
+    "name": "Ayeb",
+    "description": "Fresh, mild and crumbly homemade cheese used to complement the meal.",
+    "category": "Side Orders",
+    "ingredients": "Cheese",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 26,
+    "name": "Rice",
+    "description": "A simple side of rice.",
+    "category": "Side Orders",
+    "ingredients": "Rice",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 27,
+    "name": "Vegetarian Side Dish",
+    "description": "A side portion of one available vegetarian dish.",
+    "category": "Side Orders",
+    "ingredients": "",
+    "tags": ["Vegetarian"],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 28,
+    "name": "Meat Side Dish",
+    "description": "A side portion of one available meat dish.",
+    "category": "Side Orders",
+    "ingredients": "",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 29,
+    "name": "Traditional Ethiopian Coffee",
+    "description": "Traditional coffee served from a clay pot.",
+    "category": "Coffee & Tea",
+    "ingredients": "Coffee",
+    "tags": ["Traditional"],
+    "available": true,
+    "featured": 1
+  },
+  {
+    "id": 30,
+    "name": "Espresso, Cappuccino or Soy Latte",
+    "description": "Freshly prepared espresso beverages.",
+    "category": "Coffee & Tea",
+    "ingredients": "Coffee",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 31,
+    "name": "Regular or Decaf Coffee",
+    "description": "Fresh brewed coffee, available regular or decaffeinated.",
+    "category": "Coffee & Tea",
+    "ingredients": "Coffee",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 32,
+    "name": "Yekemen Shai",
+    "description": "Fragrant Ethiopian spiced tea.",
+    "category": "Coffee & Tea",
+    "ingredients": "Tea, spices",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 33,
+    "name": "Sodas",
+    "description": "Coke, Diet Coke, Sprite, Fanta or orange soda.",
+    "category": "Beverages",
+    "ingredients": "",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 34,
+    "name": "Fruit Juices",
+    "description": "Mango, guava, apple or orange juice.",
+    "category": "Beverages",
+    "ingredients": "",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 35,
+    "name": "Perrier",
+    "description": "Sparkling mineral water.",
+    "category": "Beverages",
+    "ingredients": "",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  },
+  {
+    "id": 36,
+    "name": "Bottled Water",
+    "description": "Still bottled water.",
+    "category": "Beverages",
+    "ingredients": "",
+    "tags": [],
+    "available": true,
+    "featured": 0
+  }
+]

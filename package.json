@@ -1,0 +1,19 @@
+{
+  "name": "hagere-gather-around",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync:menu": "node tools/sync-menu.mjs",
+    "capture": "node tools/capture.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "playwright-core": "^1.62.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.1.5"
+  }
+}

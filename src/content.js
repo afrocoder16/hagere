@@ -1,0 +1,95 @@
+export const business = {
+  name: 'Hagere Ethiopian Restaurant',
+  amharicName: 'ሀገሬ',
+  address: {
+    street: '2113 S Minnesota Ave',
+    city: 'Sioux Falls, SD 57105',
+  },
+  phoneDisplay: '(605) 271-1084',
+  phoneHref: 'tel:+16052711084',
+  email: '',
+  hours: [
+    { label: 'Tuesday–Sunday', value: '11 AM–9 PM' },
+    { label: 'Monday', value: 'Closed' },
+  ],
+  links: {
+    order: 'tel:+16052711084',
+    officialMenu: '#favourites',
+    catering: 'tel:+16052711084',
+    directions: 'https://www.google.com/maps/dir/?api=1&destination=2113+S+Minnesota+Ave+Sioux+Falls+SD+57105',
+    map: 'https://www.google.com/maps/search/?api=1&query=Hagere+Ethiopian+Restaurant+2113+S+Minnesota+Ave+Sioux+Falls+SD+57105',
+    facebook: '',
+    instagram: '',
+    tiktok: '',
+  },
+  verification: {
+    factsChecked: 'August 14, 2026',
+    menuSource: 'Hagere printed menu photographs',
+  },
+};
+
+export const featuredDishes = [
+  {
+    name: 'Hagere Exclusive',
+    note: 'House signature',
+    description: 'A generous combination of meat and vegetable favourites served together with fresh injera.',
+    color: 'terracotta',
+    icon: 'platter',
+    image: '/assets/menu/hagere-exclusive.jpg',
+    imageAlt: 'A shared Ethiopian platter with meat, vegetables, lentils and injera',
+  },
+  {
+    name: 'Vegetarian Exclusive',
+    note: 'Made to share',
+    description: 'Azifah, shiro wat, misir wat, gomen, fosolia, tikil gomen and yekik alicha with injera.',
+    color: 'sage',
+    icon: 'leaf',
+    image: '/assets/menu/vegetarian-exclusive.jpg',
+    imageAlt: 'An Ethiopian vegetarian platter arranged around fresh injera',
+  },
+  {
+    name: 'Yawaze Tibs',
+    note: 'Berbere warmth',
+    description: 'Spicy pan-fried beef cubes with jalapeños, onion, fresh rosemary and house awaze.',
+    color: 'beet',
+    icon: 'pepper',
+    image: '/assets/menu/yawaze-tibs.jpg',
+    imageAlt: 'Ethiopian beef tibs served hot with onions and green peppers',
+  },
+  {
+    name: 'Doro Wat',
+    note: 'Slow-simmered',
+    description: 'Chicken simmered in berbere, kibe and onion, traditionally served with a hard-boiled egg.',
+    color: 'gold',
+    icon: 'sun',
+    image: '/assets/menu/doro-wat.jpg',
+    imageAlt: 'Doro wat with chicken, a boiled egg, vegetables and injera',
+  },
+  {
+    name: 'Kitfo',
+    note: 'An Ethiopian classic',
+    description: 'Finely chopped lean beef seasoned with mitmita, cardamom and kibe, served with gomen and ayeb.',
+    color: 'espresso',
+    icon: 'spark',
+    image: '/assets/menu/kitfo.jpg',
+    imageAlt: 'Ethiopian kitfo served in a bowl with pieces of injera',
+  },
+  {
+    name: 'Yebeg Sega Tibs',
+    note: 'Lamb favourite',
+    description: 'Pan-fried lamb cubes with jalapeños, onion and fresh rosemary, served with selata and injera.',
+    color: 'straw',
+    icon: 'triangle',
+    image: '/assets/menu/yebeg-sega-tibs.png',
+    imageAlt: 'Yebeg sega tibs with lamb, peppers, awaze and injera',
+    imageFit: 'contain',
+  },
+];
+
+export const vegetarianMap = [
+  { name: 'Misir Wat', detail: 'red lentils + berbere', x: 17, y: 22, tone: 'red' },
+  { name: 'Yekik Alicha', detail: 'yellow split peas', x: 73, y: 16, tone: 'gold' },
+  { name: 'Gomen', detail: 'collard greens', x: 78, y: 64, tone: 'green' },
+  { name: 'Tikil Gomen', detail: 'cabbage + turmeric', x: 16, y: 70, tone: 'yellow' },
+  { name: 'Shiro Wat', detail: 'seasoned ground peas', x: 46, y: 78, tone: 'orange' },
+];
