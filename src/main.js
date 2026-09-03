@@ -3,6 +3,7 @@ import menuItems from './data/menu.json';
 import { business, featuredDishes } from './content.js';
 
 const assetPath = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, '')}`;
+const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY';
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -65,10 +66,11 @@ const normalizedCategory = (category) => category;
 
 const featuredDishCard = (dish, index, isClone = false) => `
   <article class="dish-card dish-${dish.color}" ${isClone ? 'aria-hidden="true"' : 'role="listitem"'}>
-    <div class="dish-photo${dish.imageFit === 'contain' ? ' dish-photo--contain' : ''}">
+    <button class="dish-photo dish-photo-button${dish.imageFit === 'contain' ? ' dish-photo--contain' : ''}" type="button" data-photo-trigger data-photo-src="${escapeHtml(assetPath(dish.image))}" data-photo-alt="${escapeHtml(dish.imageAlt)}" data-photo-title="${escapeHtml(dish.name)}" data-photo-note="${escapeHtml(dish.note)}" data-photo-description="${escapeHtml(dish.description)}" aria-label="View a larger photo of ${escapeHtml(dish.name)}"${isClone ? ' tabindex="-1"' : ''}>
       <img src="${escapeHtml(assetPath(dish.image))}" alt="${isClone ? '' : escapeHtml(dish.imageAlt)}" loading="lazy">
       <div class="dish-index">0${index + 1}</div>
-    </div>
+      <span class="photo-expand" aria-hidden="true">${icon('arrowUp', 'icon')} Enlarge</span>
+    </button>
     <div class="dish-copy">
       <p class="dish-note">${escapeHtml(dish.note)}</p>
       <h3>${escapeHtml(dish.name)}</h3>
@@ -92,6 +94,7 @@ app.innerHTML = `
         <a href="#favourites">Menu</a>
         <a href="#our-table">Our story</a>
         <a href="#coffee">Coffee</a>
+        <a href="#gatherings">Catering</a>
         <a href="#visit">Visit</a>
       </nav>
 
@@ -108,7 +111,8 @@ app.innerHTML = `
         <a href="#favourites">Menu <span>01</span></a>
         <a href="#our-table">Our story <span>02</span></a>
         <a href="#coffee">Coffee <span>03</span></a>
-        <a href="#visit">Visit <span>04</span></a>
+        <a href="#gatherings">Catering <span>04</span></a>
+        <a href="#visit">Visit <span>05</span></a>
         <button class="button button-outline view-menu-trigger" type="button" data-menu-trigger>Explore the full menu ${icon('arrow', 'icon')}</button>
         <a class="button button-primary" href="${business.links.order}">Order takeout ${icon('arrowUp', 'icon')}</a>
       </div>
@@ -138,16 +142,17 @@ app.innerHTML = `
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Design concept imagery of an Ethiopian communal meal">
-          <div class="hero-arch">
-            <img src="${assetPath('assets/generated/hero-platter-concept.webp')}" alt="Concept image of an abundant Ethiopian platter with injera, stews, vegetables, chicken and tibs" width="1536" height="1024" fetchpriority="high" />
-            <span class="image-note">Concept image · owner photo to replace</span>
+        <div class="hero-visual reveal" aria-label="Hagere Ethiopian Restaurant storefront in Sioux Falls">
+          <div class="hero-arch hero-arch-storefront">
+            <img src="${assetPath('assets/menu/front-store.png')}" alt="Front entrance of Hagere Ethiopian Restaurant at 2113 South Minnesota Avenue in Sioux Falls" width="1659" height="948" fetchpriority="high" />
+            <div class="storefront-photo-caption"><span>Come through the front door</span><strong>Tuesday–Sunday · 11 AM–9 PM</strong></div>
           </div>
           <div class="arch-thread" aria-hidden="true"><span></span></div>
-          <div class="coffee-vignette">
-            <img src="${assetPath('assets/generated/coffee-hospitality-concept.webp')}" alt="Concept still life of a jebena and small coffee cups on a woven tray" width="1122" height="1402" />
-            <div><span lang="am">ቡና</span><small>Coffee & connection</small></div>
-          </div>
+          <a class="storefront-card" href="${business.links.directions}" target="_blank" rel="noreferrer" aria-label="Get directions to Hagere Ethiopian Restaurant">
+            <span class="storefront-card-pin">${icon('pin', 'icon')}</span>
+            <span class="storefront-card-copy"><small>Find our front door</small><strong>${business.address.street}</strong><span>${business.address.city}</span></span>
+            <span class="storefront-card-arrow">${icon('arrowUp', 'icon')}</span>
+          </a>
           <div class="floating-seal" aria-hidden="true">${weaveMark()}<span>HAGERE<br />SIOUX FALLS</span></div>
         </div>
       </div>
@@ -226,6 +231,29 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="people section" id="people" aria-labelledby="people-title">
+      <div class="content-shell people-grid">
+        <div class="people-copy reveal">
+          <p class="eyebrow">From Hagere’s kitchen</p>
+          <h2 id="people-title">The people who make every table <em>feel like home.</em></h2>
+          <p class="lead">Behind every platter is a team cooking, welcoming, and caring for guests with the warmth that gives Hagere its name.</p>
+          <p>Come for the deeply seasoned food. Return for the generous welcome and the feeling that there is always room for one more at the table.</p>
+          <a class="arrow-link" href="#visit">Come meet us ${icon('arrow', 'icon')}</a>
+        </div>
+        <div class="people-photos reveal">
+          <figure class="people-main-photo">
+            <img src="${assetPath('assets/gallery/team.jpg')}" alt="Members of the Hagere team welcoming guests from behind the restaurant counter" width="1280" height="960" loading="lazy" />
+            <figcaption><strong>The Hagere team</strong><span>Cooking and welcoming in Sioux Falls</span></figcaption>
+          </figure>
+          <figure class="people-guest-photo">
+            <img src="${assetPath('assets/gallery/guests-dining.png')}" alt="Guests sharing an Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
+            <figcaption>Made for gathering</figcaption>
+          </figure>
+          <div class="people-seal" aria-hidden="true">${weaveMark()}<span>WELCOME<br />TO HAGERE</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="vegetarian section" id="vegetarian" aria-labelledby="vegetarian-title">
       <div class="content-shell vegetarian-grid">
         <div class="veg-copy reveal">
@@ -255,7 +283,7 @@ app.innerHTML = `
         <div class="coffee-visual reveal">
           <div class="coffee-halo" aria-hidden="true"></div>
           <figure class="coffee-photo">
-            <img src="${assetPath('assets/pics/coffee.png')}" alt="Traditional Ethiopian coffee ceremony with a steaming jebena surrounded by small cups" width="1085" height="1450" loading="lazy" />
+            <img src="${assetPath('assets/gallery/coffee-ceremony.png')}" alt="A Hagere team member preparing a traditional Ethiopian coffee ceremony with incense and rows of small cups" width="1086" height="1448" loading="lazy" />
             <figcaption><span lang="am">ቡና</span><small>Prepared to be shared</small></figcaption>
           </figure>
           <div class="steam steam-one"></div><div class="steam steam-two"></div>
@@ -275,18 +303,51 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="inside section" id="inside-hagere" aria-labelledby="inside-title">
+      <div class="content-shell">
+        <div class="inside-heading reveal">
+          <div><p class="eyebrow">Inside Hagere</p><h2 id="inside-title">A room filled with <em>colour, craft, and welcome.</em></h2></div>
+          <p>Traditional baskets, coffee objects, artwork, and warm colour make the dining room part of the experience.</p>
+        </div>
+        <div class="inside-gallery reveal">
+          <figure class="inside-wide">
+            <img src="${assetPath('assets/gallery/dining-room.png')}" alt="Wide view of Hagere's colourful dining room and front counter" width="1448" height="1086" loading="lazy" />
+            <figcaption><span>01</span> The dining room</figcaption>
+          </figure>
+          <figure class="inside-wide">
+            <img src="${assetPath('assets/gallery/dining-room-2.png')}" alt="Hagere interior with traditional decor, tables and coffee bar" width="1448" height="1086" loading="lazy" />
+            <figcaption><span>02</span> Details everywhere</figcaption>
+          </figure>
+          <figure class="inside-tall">
+            <img src="${assetPath('assets/gallery/dining-corner.png')}" alt="Interior corner at Hagere with Ethiopian decor and a giraffe sculpture" width="1082" height="1454" loading="lazy" />
+            <figcaption><span>03</span> A sense of place</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="gatherings section" id="gatherings" aria-labelledby="gatherings-title">
       <div class="content-shell">
         <div class="gathering-card reveal">
-          <img src="${assetPath('assets/pics/inside-new%20picture.png')}" alt="Inside Hagere Ethiopian Restaurant, showing the dining room, coffee bar and colourful Hagere sign" width="1774" height="887" loading="lazy" />
+          <img src="${assetPath('assets/gallery/guests-dining.png')}" alt="Guests sharing a generous Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
           <div class="gathering-overlay"></div>
           <div class="gathering-copy">
             <p class="eyebrow light">Bring everyone <span>05</span></p>
             <h2 id="gatherings-title">From dinner for two to the <em>whole celebration.</em></h2>
             <p>Shared platters, generous combinations, dine-in and takeout give every gathering a place at Hagere.</p>
-            <a class="button button-ivory" href="${business.links.catering}">Call about groups ${icon('arrowUp', 'icon')}</a>
+            <button class="button button-ivory" type="button" data-catering-trigger>Plan your gathering ${icon('arrowUp', 'icon')}</button>
           </div>
           <div class="gathering-stamp" aria-hidden="true">${weaveMark()}<span>Gather<br />together</span></div>
+        </div>
+        <div class="catering-strip reveal">
+          <div class="catering-copy">
+            <p class="eyebrow">Made for a crowd</p>
+            <h3>Bring the shared-table experience <em>to your gathering.</em></h3>
+            <p>Ask Hagere about generous platters, injera, and dishes prepared for groups.</p>
+            <button class="arrow-link" type="button" data-catering-trigger>Plan a group order ${icon('arrow', 'icon')}</button>
+          </div>
+          <figure><img src="${assetPath('assets/gallery/catering-platter.jpg')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" loading="lazy" /><figcaption>Ready to share</figcaption></figure>
+          <figure><img src="${assetPath('assets/gallery/catering-tray.jpg')}" alt="A catering tray with rolled injera and seasoned stuffed peppers" width="960" height="1280" loading="lazy" /><figcaption>Prepared for groups</figcaption></figure>
         </div>
       </div>
     </section>
@@ -340,8 +401,8 @@ app.innerHTML = `
         <div><p class="footer-label">Hours</p>${business.hours.map((row) => `<p><span>${row.label}</span>${row.value}</p>`).join('')}</div>
         <div><p class="footer-label">Ready to order?</p><div class="socials">${business.links.instagram ? `<a href="${business.links.instagram}" aria-label="Instagram" target="_blank" rel="noreferrer">${icon('instagram', 'icon')}</a>` : ''}${business.links.facebook ? `<a href="${business.links.facebook}" aria-label="Facebook" target="_blank" rel="noreferrer">${icon('facebook', 'icon')}</a>` : ''}${business.links.tiktok ? `<a href="${business.links.tiktok}" aria-label="TikTok" target="_blank" rel="noreferrer">${icon('tiktok', 'icon')}</a>` : ''}</div><a class="button button-primary footer-order" href="${business.links.order}">Order takeout ${icon('phone', 'icon')}</a></div>
       </div>
-      <div class="footer-bottom"><p>© ${new Date().getFullYear()} Hagere Ethiopian Restaurant</p><div><a href="${business.links.officialMenu}">Menu</a><a href="#privacy-note">Privacy</a><a href="#accessibility-note">Accessibility</a><span>Details reviewed ${business.verification.factsChecked}</span></div></div>
-      <div class="footer-notes"><p id="privacy-note"><strong>Prototype privacy:</strong> this sample homepage does not collect or store visitor information.</p><p id="accessibility-note"><strong>Accessibility:</strong> keyboard navigation, visible focus, reduced-motion preferences, semantic headings and responsive text are supported. Contact Hagere by phone for service accommodations.</p></div>
+      <div class="footer-bottom"><p>© ${new Date().getFullYear()} Hagere Ethiopian Restaurant</p><div><a href="${business.links.officialMenu}">Menu</a><a href="#privacy-note">Privacy</a><a href="#accessibility-note">Accessibility</a><a href="https://midvora.com" target="_blank" rel="noreferrer">Site by Midvora</a></div></div>
+      <div class="footer-notes"><p id="privacy-note"><strong>Privacy:</strong> this website does not use tracking cookies or sell visitor information. The catering form sends your details directly to Hagere to follow up on your request.</p><p id="accessibility-note"><strong>Accessibility:</strong> keyboard navigation, visible focus, reduced-motion preferences, semantic headings and responsive text are supported. Contact Hagere by phone for service accommodations.</p></div>
     </div>
   </footer>
 
@@ -361,6 +422,75 @@ app.innerHTML = `
       </div>
       <div class="full-menu" data-menu-list></div>
       <div class="menu-dialog-footer"><p>Availability and prices may change. Please call Hagere to confirm your selections.</p><a class="button button-primary" href="${business.links.order}">Call Hagere ${icon('phone', 'icon')}</a></div>
+    </div>
+  </dialog>
+
+  <dialog class="photo-dialog" data-photo-dialog aria-labelledby="photo-dialog-title">
+    <div class="photo-dialog-shell">
+      <button class="photo-dialog-close" type="button" aria-label="Close enlarged dish photo" data-photo-close>${icon('close', 'icon')}</button>
+      <figure>
+        <img src="" alt="" data-photo-image />
+        <figcaption>
+          <p><span data-photo-note></span> · From Hagere’s kitchen</p>
+          <h2 id="photo-dialog-title" data-photo-title></h2>
+          <p class="photo-dialog-description" data-photo-description></p>
+          <div class="photo-dialog-signoff"><span>${miniDishIcon('spark')}</span><small>Prepared with care. Made to gather around.</small></div>
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
+
+  <dialog class="catering-dialog" data-catering-dialog aria-labelledby="catering-dialog-title">
+    <div class="catering-dialog-shell">
+      <button class="catering-dialog-close" type="button" aria-label="Close catering request form" data-catering-close>${icon('close', 'icon')}</button>
+      <aside class="catering-dialog-story">
+        <img src="${assetPath('assets/gallery/catering-platter.jpg')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" />
+        <div>
+          <p class="eyebrow light">Gather around</p>
+          <h2>Let’s plan a table <em>worth sharing.</em></h2>
+          <p>Tell Hagere about your gathering and the team will follow up to confirm dishes, availability, timing, and pricing.</p>
+        </div>
+      </aside>
+      <div class="catering-form-panel">
+        <div class="catering-form-heading">
+          <p class="eyebrow">Catering inquiry</p>
+          <h2 id="catering-dialog-title">Tell us about <em>your gathering.</em></h2>
+          <p>This request does not confirm an order. Hagere will contact you to finalize the details.</p>
+        </div>
+        <form class="catering-form" action="https://api.web3forms.com/submit" method="POST" data-catering-form>
+          <input type="hidden" name="access_key" value="${escapeHtml(web3FormsAccessKey)}" />
+          <input type="hidden" name="subject" value="New catering inquiry for Hagere Ethiopian Restaurant" />
+          <input type="hidden" name="from_name" value="Hagere Website Catering" />
+          <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="form-grid">
+            <label class="form-field"><span>Full name <b>*</b></span><input type="text" name="name" autocomplete="name" required placeholder="Your name" /></label>
+            <label class="form-field"><span>Phone number <b>*</b></span><input type="tel" name="phone" autocomplete="tel" required placeholder="(605) 555-0123" /></label>
+            <label class="form-field"><span>Email address <b>*</b></span><input type="email" name="email" autocomplete="email" required placeholder="you@example.com" /></label>
+            <label class="form-field"><span>Number of guests <b>*</b></span><input type="number" name="Guest Count" min="1" step="1" required placeholder="25" /></label>
+            <label class="form-field"><span>Event date <b>*</b></span><input type="date" name="Event Date" required data-event-date /></label>
+            <label class="form-field"><span>Preferred time</span><input type="time" name="Preferred Time" /></label>
+            <label class="form-field form-field-wide"><span>Service type <b>*</b></span><select name="Service Type" required><option value="">Choose one</option><option>Catering pickup</option><option>Group dining at Hagere</option><option>Not sure yet</option></select></label>
+            <fieldset class="form-field form-field-wide catering-interests">
+              <legend>What are you interested in?</legend>
+              <div><label><input type="checkbox" name="Interest - Meat Dishes" value="Yes" /><span>Meat dishes</span></label><label><input type="checkbox" name="Interest - Vegetarian Dishes" value="Yes" /><span>Vegetarian dishes</span></label><label><input type="checkbox" name="Interest - Mixed Platters" value="Yes" /><span>Mixed platters</span></label><label><input type="checkbox" name="Interest - Coffee Ceremony" value="Yes" /><span>Coffee ceremony</span></label></div>
+            </fieldset>
+            <label class="form-field form-field-wide"><span>Dietary needs or allergies</span><textarea name="Dietary Needs" rows="3" placeholder="Tell us about vegetarian, allergy, or preparation needs"></textarea></label>
+            <label class="form-field form-field-wide"><span>Requested dishes and event notes</span><textarea name="message" rows="4" placeholder="Tell us which dishes you want, the occasion, venue, pickup timing, or any other details"></textarea></label>
+          </div>
+          <div class="catering-form-footer">
+            <p role="status" aria-live="polite" data-catering-status></p>
+            <button class="button button-primary" type="submit" data-catering-submit>Send catering request ${icon('arrow', 'icon')}</button>
+          </div>
+        </form>
+        <div class="catering-success" data-catering-success hidden>
+          <span>${weaveMark()}</span>
+          <p class="eyebrow">Request received</p>
+          <h2>Thank you.<br /><em>We’ll be in touch.</em></h2>
+          <p>Your catering inquiry has been sent to Hagere. The team will follow up to confirm the details.</p>
+          <button class="button button-outline" type="button" data-catering-done>Close</button>
+        </div>
+      </div>
     </div>
   </dialog>
 `;
@@ -434,6 +564,102 @@ document.querySelectorAll('[data-category]').forEach((tab) => tab.addEventListen
   renderMenu();
 }));
 
+const photoDialog = document.querySelector('[data-photo-dialog]');
+const photoDialogImage = photoDialog.querySelector('[data-photo-image]');
+const photoDialogTitle = photoDialog.querySelector('[data-photo-title]');
+const photoDialogNote = photoDialog.querySelector('[data-photo-note]');
+const photoDialogDescription = photoDialog.querySelector('[data-photo-description]');
+const closePhotoDialog = () => {
+  photoDialog.classList.remove('open');
+  document.body.classList.remove('no-scroll');
+  window.setTimeout(() => {
+    photoDialog.close();
+    photoDialogImage.removeAttribute('src');
+  }, 180);
+};
+
+document.querySelectorAll('[data-photo-trigger]').forEach((trigger) => trigger.addEventListener('click', () => {
+  photoDialogImage.src = trigger.dataset.photoSrc;
+  photoDialogImage.alt = trigger.dataset.photoAlt;
+  photoDialogTitle.textContent = trigger.dataset.photoTitle;
+  photoDialogNote.textContent = trigger.dataset.photoNote;
+  photoDialogDescription.textContent = trigger.dataset.photoDescription;
+  photoDialog.showModal();
+  document.body.classList.add('no-scroll');
+  requestAnimationFrame(() => photoDialog.classList.add('open'));
+}));
+photoDialog.querySelector('[data-photo-close]').addEventListener('click', closePhotoDialog);
+photoDialog.addEventListener('cancel', (event) => { event.preventDefault(); closePhotoDialog(); });
+photoDialog.addEventListener('click', (event) => { if (event.target === photoDialog) closePhotoDialog(); });
+
+const cateringDialog = document.querySelector('[data-catering-dialog]');
+const cateringForm = cateringDialog.querySelector('[data-catering-form]');
+const cateringSuccess = cateringDialog.querySelector('[data-catering-success]');
+const cateringStatus = cateringDialog.querySelector('[data-catering-status]');
+const cateringSubmit = cateringDialog.querySelector('[data-catering-submit]');
+const cateringSubmitLabel = cateringSubmit.innerHTML;
+const eventDateInput = cateringDialog.querySelector('[data-event-date]');
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split('T')[0];
+eventDateInput.min = localToday;
+
+const closeCateringDialog = () => {
+  cateringDialog.classList.remove('open');
+  document.body.classList.remove('no-scroll');
+  window.setTimeout(() => cateringDialog.close(), 180);
+};
+
+document.querySelectorAll('[data-catering-trigger]').forEach((trigger) => trigger.addEventListener('click', () => {
+  cateringForm.hidden = false;
+  cateringSuccess.hidden = true;
+  cateringStatus.textContent = '';
+  cateringDialog.showModal();
+  document.body.classList.add('no-scroll');
+  requestAnimationFrame(() => cateringDialog.classList.add('open'));
+}));
+
+cateringDialog.querySelector('[data-catering-close]').addEventListener('click', closeCateringDialog);
+cateringDialog.querySelector('[data-catering-done]').addEventListener('click', closeCateringDialog);
+cateringDialog.addEventListener('cancel', (event) => { event.preventDefault(); closeCateringDialog(); });
+cateringDialog.addEventListener('click', (event) => { if (event.target === cateringDialog) closeCateringDialog(); });
+
+cateringForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!cateringForm.reportValidity()) return;
+
+  if (!web3FormsAccessKey || web3FormsAccessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+    cateringStatus.textContent = 'The form is ready, but the Web3Forms access key still needs to be added.';
+    cateringStatus.className = 'form-status error';
+    return;
+  }
+
+  cateringSubmit.disabled = true;
+  cateringSubmit.innerHTML = 'Sending request…';
+  cateringStatus.textContent = 'Sending your catering request…';
+  cateringStatus.className = 'form-status';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(cateringForm),
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
+
+    cateringForm.reset();
+    eventDateInput.min = localToday;
+    cateringForm.hidden = true;
+    cateringSuccess.hidden = false;
+    cateringSuccess.querySelector('[data-catering-done]').focus();
+  } catch (error) {
+    cateringStatus.textContent = 'We could not send the request. Please try again or call Hagere at (605) 271-1084.';
+    cateringStatus.className = 'form-status error';
+  } finally {
+    cateringSubmit.disabled = false;
+    cateringSubmit.innerHTML = cateringSubmitLabel;
+  }
+});
+
 const navToggle = document.querySelector('[data-nav-toggle]');
 const mobileNav = document.querySelector('[data-mobile-nav]');
 navToggle.addEventListener('click', () => {
@@ -506,6 +732,7 @@ if (dishCarousel) {
   viewport.addEventListener('wheel', () => pauseTemporarily(), { passive: true });
   viewport.addEventListener('pointerdown', (event) => {
     if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    if (event.target.closest('button, a')) return;
     isDragging = true;
     didDrag = false;
     dragStartX = event.clientX;

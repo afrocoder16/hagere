@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://afrocoder16.github.io/hagere/sitemap.xml
