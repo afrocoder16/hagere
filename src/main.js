@@ -260,7 +260,7 @@ app.innerHTML = `
             <img src="${assetPath('assets/gallery/coffee-ceremony.webp')}" alt="A Hagere team member preparing a traditional Ethiopian coffee ceremony with incense and rows of small cups" width="1086" height="1448" loading="lazy" />
             <figcaption><span lang="am">ቡና</span><small>Prepared to be shared</small></figcaption>
           </figure>
-          <div class="steam steam-one"></div><div class="steam steam-two"></div>
+          <div class="steam steam-one"></div><div class="steam steam-two"></div><div class="steam steam-three"></div>
           <div class="coffee-ritual-card">
             <small>The rhythm of welcome</small>
             <div><span><i>01</i> Gather</span><span><i>02</i> Pour</span><span><i>03</i> Share</span></div>
