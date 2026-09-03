@@ -25,8 +25,6 @@ const icon = (name, className = '') => {
     instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>',
     facebook: '<path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v6h4v-6h3l1-4h-4V9c0-.7.3-1 1-1Z"/>',
     tiktok: '<path d="M15 3v11.2a4.8 4.8 0 1 1-4.8-4.8M15 3c.7 2.4 2.3 4 5 4"/>',
-    pause: '<path d="M9 6v12M15 6v12"/>',
-    play: '<path d="m9 6 9 6-9 6Z"/>',
   };
   return `<svg class="${className}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.arrow}</svg>`;
 };
@@ -104,20 +102,20 @@ app.innerHTML = `
         <button class="mobile-nav-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>${icon('menu', 'icon')}</button>
       </div>
     </div>
-
-    <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
-      <div class="mobile-nav-inner">
-        <p class="eyebrow">Gather around</p>
-        <a href="#favourites">Menu <span>01</span></a>
-        <a href="#our-table">Our story <span>02</span></a>
-        <a href="#coffee">Coffee <span>03</span></a>
-        <a href="#gatherings">Catering <span>04</span></a>
-        <a href="#visit">Visit <span>05</span></a>
-        <button class="button button-outline view-menu-trigger" type="button" data-menu-trigger>Explore the full menu ${icon('arrow', 'icon')}</button>
-        <a class="button button-primary" href="${business.links.order}">Order takeout ${icon('arrowUp', 'icon')}</a>
-      </div>
-    </div>
   </header>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+    <div class="mobile-nav-inner">
+      <p class="eyebrow">Gather around</p>
+      <a href="#favourites">Menu <span>01</span></a>
+      <a href="#our-table">Our story <span>02</span></a>
+      <a href="#coffee">Coffee <span>03</span></a>
+      <a href="#gatherings">Catering <span>04</span></a>
+      <a href="#visit">Visit <span>05</span></a>
+      <button class="button button-outline view-menu-trigger" type="button" data-menu-trigger>Explore the full menu ${icon('arrow', 'icon')}</button>
+      <a class="button button-primary" href="${business.links.order}">Order takeout ${icon('arrowUp', 'icon')}</a>
+    </div>
+  </div>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
@@ -185,7 +183,6 @@ app.innerHTML = `
           <p><span aria-hidden="true"></span> Drag, swipe, or let the menu travel</p>
           <div class="dish-carousel-controls" aria-label="Featured menu controls">
             <button type="button" data-carousel-prev aria-label="Previous featured dish">${icon('arrow', 'icon')}</button>
-            <button type="button" data-carousel-toggle aria-label="Pause featured menu carousel">${icon('pause', 'icon')}<span>Pause</span></button>
             <button type="button" data-carousel-next aria-label="Next featured dish">${icon('arrow', 'icon')}</button>
           </div>
         </div>
@@ -254,29 +251,6 @@ app.innerHTML = `
       </div>
     </section>
 
-    <section class="vegetarian section" id="vegetarian" aria-labelledby="vegetarian-title">
-      <div class="content-shell vegetarian-grid">
-        <div class="veg-copy reveal">
-          <p class="eyebrow">Colour from the garden <span>03</span></p>
-          <h2 id="vegetarian-title">A feast built from <em>lentils, greens, spices, and care.</em></h2>
-          <p>Hagere’s menu makes vegetables the celebration—not the afterthought. Choose individual dishes or gather them into a colourful sampler.</p>
-          <button class="button button-dark view-menu-trigger" type="button" data-menu-trigger>Explore vegetarian dishes ${icon('arrow', 'icon')}</button>
-        </div>
-
-        <div class="veg-photo-stage reveal">
-          <div class="veg-photo-orbit" aria-hidden="true"></div>
-          <figure class="veg-feast-photo">
-            <img src="${assetPath('assets/pics/food.webp')}" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
-            <figcaption><small>One table · many flavours</small><strong>Made to share</strong></figcaption>
-          </figure>
-          <div class="veg-callout veg-callout-one"><i></i><span><strong>Misir Wat</strong><small>Red lentils + berbere</small></span></div>
-          <div class="veg-callout veg-callout-two"><i></i><span><strong>Gomen</strong><small>Slow-cooked greens</small></span></div>
-          <div class="veg-callout veg-callout-three"><i></i><span><strong>Tikil Gomen</strong><small>Cabbage + turmeric</small></span></div>
-          <div class="veg-photo-seal" aria-hidden="true">${weaveMark()}<span>COLOUR<br />ON INJERA</span></div>
-        </div>
-      </div>
-    </section>
-
     <section class="coffee section" id="coffee" aria-labelledby="coffee-title">
       <div class="coffee-background" aria-hidden="true"></div>
       <div class="content-shell coffee-grid">
@@ -294,11 +268,34 @@ app.innerHTML = `
           <div class="coffee-ceremony-seal" aria-hidden="true">${weaveMark()}<span>SLOW<br />MOMENTS</span></div>
         </div>
         <div class="coffee-copy reveal">
-          <p class="eyebrow light">Coffee & connection <span>04</span></p>
+          <p class="eyebrow light">Coffee & connection <span>03</span></p>
           <h2 id="coffee-title">Hospitality that <em>takes its time.</em></h2>
           <p class="lead">Across Ethiopia, coffee traditions create space for conversation, welcome, and connection.</p>
           <p>At Hagere, that same spirit shapes the dining experience: settle in, share a table, and let the conversation stretch a little longer.</p>
           <div class="coffee-note"><span>${miniDishIcon('spark')}</span><p>Traditional Ethiopian coffee served from a clay pot is listed on Hagere’s menu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vegetarian section" id="vegetarian" aria-labelledby="vegetarian-title">
+      <div class="content-shell vegetarian-grid">
+        <div class="veg-copy reveal">
+          <p class="eyebrow">Colour from the garden <span>04</span></p>
+          <h2 id="vegetarian-title">A feast built from <em>lentils, greens, spices, and care.</em></h2>
+          <p>Hagere’s menu makes vegetables the celebration—not the afterthought. Choose individual dishes or gather them into a colourful sampler.</p>
+          <button class="button button-dark view-menu-trigger" type="button" data-menu-trigger>Explore vegetarian dishes ${icon('arrow', 'icon')}</button>
+        </div>
+
+        <div class="veg-photo-stage reveal">
+          <div class="veg-photo-orbit" aria-hidden="true"></div>
+          <figure class="veg-feast-photo">
+            <img src="${assetPath('assets/pics/food.webp')}" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
+            <figcaption><small>One table · many flavours</small><strong>Made to share</strong></figcaption>
+          </figure>
+          <div class="veg-callout veg-callout-one"><i></i><span><strong>Misir Wat</strong><small>Red lentils + berbere</small></span></div>
+          <div class="veg-callout veg-callout-two"><i></i><span><strong>Gomen</strong><small>Slow-cooked greens</small></span></div>
+          <div class="veg-callout veg-callout-three"><i></i><span><strong>Tikil Gomen</strong><small>Cabbage + turmeric</small></span></div>
+          <div class="veg-photo-seal" aria-hidden="true">${weaveMark()}<span>COLOUR<br />ON INJERA</span></div>
         </div>
       </div>
     </section>
@@ -684,9 +681,8 @@ const dishCarousel = document.querySelector('[data-dish-carousel]');
 if (dishCarousel) {
   const viewport = dishCarousel.querySelector('[data-dish-viewport]');
   const firstSet = dishCarousel.querySelector('[data-dish-set]');
-  const toggle = dishCarousel.querySelector('[data-carousel-toggle]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let manuallyPaused = prefersReducedMotion;
+  const manuallyPaused = prefersReducedMotion;
   let temporarilyPaused = false;
   let isVisible = true;
   let isDragging = false;
@@ -697,11 +693,6 @@ if (dishCarousel) {
   let previousTime = performance.now();
 
   const cycleWidth = () => firstSet.getBoundingClientRect().width + 15;
-  const updateToggle = () => {
-    toggle.innerHTML = `${icon(manuallyPaused ? 'play' : 'pause', 'icon')}<span>${manuallyPaused ? 'Play' : 'Pause'}</span>`;
-    toggle.setAttribute('aria-label', `${manuallyPaused ? 'Play' : 'Pause'} featured menu carousel`);
-    toggle.setAttribute('aria-pressed', String(manuallyPaused));
-  };
   const pauseTemporarily = (delay = 2600) => {
     temporarilyPaused = true;
     window.clearTimeout(resumeTimer);
@@ -715,13 +706,6 @@ if (dishCarousel) {
     pauseTemporarily();
   };
 
-  updateToggle();
-  toggle.addEventListener('click', () => {
-    manuallyPaused = !manuallyPaused;
-    temporarilyPaused = false;
-    window.clearTimeout(resumeTimer);
-    updateToggle();
-  });
   dishCarousel.querySelector('[data-carousel-prev]').addEventListener('click', () => moveByCard(-1));
   dishCarousel.querySelector('[data-carousel-next]').addEventListener('click', () => moveByCard(1));
   viewport.addEventListener('pointerenter', () => { temporarilyPaused = true; window.clearTimeout(resumeTimer); });
