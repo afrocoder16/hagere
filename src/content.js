@@ -35,7 +35,7 @@ export const featuredDishes = [
     description: 'A generous combination of meat and vegetable favourites served together with fresh injera.',
     color: 'terracotta',
     icon: 'platter',
-    image: '/assets/menu/hagere-exclusive.png',
+    image: '/assets/menu/hagere-exclusive.webp',
     imageAlt: 'Hagere Exclusive platter with meat dishes, vegetables, lentils and fresh injera',
   },
   {
@@ -44,7 +44,7 @@ export const featuredDishes = [
     description: 'Azifah, shiro wat, misir wat, gomen, fosolia, tikil gomen and yekik alicha with injera.',
     color: 'sage',
     icon: 'leaf',
-    image: '/assets/menu/vegetarian-exclusive.png',
+    image: '/assets/menu/vegetarian-exclusive.webp',
     imageAlt: 'Vegetarian Exclusive platter with lentils, greens, vegetables and fresh injera',
   },
   {
@@ -53,7 +53,7 @@ export const featuredDishes = [
     description: 'Spicy pan-fried beef cubes with jalapeños, onion, fresh rosemary and house awaze.',
     color: 'beet',
     icon: 'pepper',
-    image: '/assets/menu/awaze-tibs.png',
+    image: '/assets/menu/awaze-tibs.webp',
     imageAlt: 'Awaze beef tibs with peppers and onions served over fresh injera',
   },
   {
@@ -62,7 +62,7 @@ export const featuredDishes = [
     description: 'Long strips of beef pan-fried with onions and jalapeño peppers, served hot with injera.',
     color: 'forest',
     icon: 'pepper',
-    image: '/assets/menu/zilzil-tibs.png',
+    image: '/assets/menu/zilzil-tibs.webp',
     imageAlt: 'Zilzil tibs served sizzling above a flame with injera and green sauce',
   },
   {
@@ -80,7 +80,7 @@ export const featuredDishes = [
     description: 'Finely chopped lean beef seasoned with mitmita, cardamom and kibe, served with gomen and ayeb.',
     color: 'espresso',
     icon: 'spark',
-    image: '/assets/menu/kitfo.png',
+    image: '/assets/menu/kitfo.webp',
     imageAlt: 'Kitfo served with rolled injera, ayeb and gomen',
   },
   {
@@ -89,7 +89,7 @@ export const featuredDishes = [
     description: 'Pan-fried lamb cubes with jalapeños, onion and fresh rosemary, served with selata and injera.',
     color: 'straw',
     icon: 'triangle',
-    image: '/assets/menu/yebeg-sega-tibs.png',
+    image: '/assets/menu/yebeg-sega-tibs.webp',
     imageAlt: 'Yebeg sega tibs with lamb, peppers, onions, awaze and injera',
   },
 ];

@@ -8,11 +8,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "sync:menu": "node tools/sync-menu.mjs",
-    "capture": "node tools/capture.mjs"
+    "capture": "node tools/capture.mjs",
+    "optimize:images": "node tools/optimize-images.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "playwright-core": "^1.62.0",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "vite": "^8.1.5"
   }

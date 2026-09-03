@@ -21,6 +21,7 @@ npm run capture
 - `src/content.js` — Hagere address, phone, hours, links, featured dishes, and editable homepage content.
 - `src/data/menu.json` — Hagere menu transcribed from the supplied printed-menu photographs.
 - `tools/sync-menu.mjs` — validates the local Hagere menu snapshot without fetching remote menu data.
+- `tools/optimize-images.mjs` — converts any new PNG/JPG dropped into `public/assets/{menu,gallery,pics}` to WebP (skips a file if WebP doesn't come out smaller). Run `npm run optimize:images` after adding photos, then update the `.png`/`.jpg` references in `src/content.js` or `src/main.js` to `.webp`.
 - `src/main.js` — semantic homepage sections, menu dialog, navigation, and interactions.
 - `src/styles.css` — the supplied design system and responsive styling, intentionally unchanged.
 - `public/assets/` — the supplied images, intentionally unchanged.

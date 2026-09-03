@@ -87,7 +87,7 @@ app.innerHTML = `
   <header class="site-header" data-header>
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="Hagere Ethiopian Restaurant, home">
-        <img class="brand-logo" src="${assetPath('assets/pics/logo.png')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" fetchpriority="high" />
+        <img class="brand-logo" src="${assetPath('assets/pics/logo.webp')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" fetchpriority="high" />
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
@@ -144,7 +144,7 @@ app.innerHTML = `
 
         <div class="hero-visual reveal" aria-label="Hagere Ethiopian Restaurant storefront in Sioux Falls">
           <div class="hero-arch hero-arch-storefront">
-            <img src="${assetPath('assets/menu/front-store.png')}" alt="Front entrance of Hagere Ethiopian Restaurant at 2113 South Minnesota Avenue in Sioux Falls" width="1659" height="948" fetchpriority="high" />
+            <img src="${assetPath('assets/menu/front-store.webp')}" alt="Front entrance of Hagere Ethiopian Restaurant at 2113 South Minnesota Avenue in Sioux Falls" width="1659" height="948" fetchpriority="high" />
             <div class="storefront-photo-caption"><span>Come through the front door</span><strong>Tuesday–Sunday · 11 AM–9 PM</strong></div>
           </div>
           <div class="arch-thread" aria-hidden="true"><span></span></div>
@@ -206,11 +206,11 @@ app.innerHTML = `
       <div class="content-shell meaning-grid">
         <div class="art-gallery reveal" aria-label="A gallery of Ethiopian artwork displayed at Hagere">
           <figure class="art-frame art-frame-tall">
-            <img src="${assetPath('assets/pics/art.png')}" alt="Tall Ethiopian artwork depicting three traditional musicians" width="724" height="2172" loading="lazy" />
+            <img src="${assetPath('assets/pics/art.webp')}" alt="Tall Ethiopian artwork depicting three traditional musicians" width="724" height="2172" loading="lazy" />
             <figcaption><span>01</span> Music & memory</figcaption>
           </figure>
           <figure class="art-frame art-frame-coffee">
-            <img src="${assetPath('assets/pics/art3.jpg')}" alt="Ethiopian artwork depicting a traditional coffee ceremony" width="540" height="720" loading="lazy" />
+            <img src="${assetPath('assets/pics/art3.webp')}" alt="Ethiopian artwork depicting a traditional coffee ceremony" width="540" height="720" loading="lazy" />
             <figcaption><span>02</span> Coffee & welcome</figcaption>
           </figure>
           <figure class="art-frame art-frame-injera">
@@ -242,11 +242,11 @@ app.innerHTML = `
         </div>
         <div class="people-photos reveal">
           <figure class="people-main-photo">
-            <img src="${assetPath('assets/gallery/team.jpg')}" alt="Members of the Hagere team welcoming guests from behind the restaurant counter" width="1280" height="960" loading="lazy" />
+            <img src="${assetPath('assets/gallery/team.webp')}" alt="Members of the Hagere team welcoming guests from behind the restaurant counter" width="1280" height="960" loading="lazy" />
             <figcaption><strong>The Hagere team</strong><span>Cooking and welcoming in Sioux Falls</span></figcaption>
           </figure>
           <figure class="people-guest-photo">
-            <img src="${assetPath('assets/gallery/guests-dining.png')}" alt="Guests sharing an Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
+            <img src="${assetPath('assets/gallery/guests-dining.webp')}" alt="Guests sharing an Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
             <figcaption>Made for gathering</figcaption>
           </figure>
           <div class="people-seal" aria-hidden="true">${weaveMark()}<span>WELCOME<br />TO HAGERE</span></div>
@@ -266,7 +266,7 @@ app.innerHTML = `
         <div class="veg-photo-stage reveal">
           <div class="veg-photo-orbit" aria-hidden="true"></div>
           <figure class="veg-feast-photo">
-            <img src="${assetPath('assets/pics/food.png')}" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
+            <img src="${assetPath('assets/pics/food.webp')}" alt="Overhead Ethiopian feast with colourful vegetables, lentils, stews and rolled injera arranged for sharing" width="1254" height="1254" loading="lazy" />
             <figcaption><small>One table · many flavours</small><strong>Made to share</strong></figcaption>
           </figure>
           <div class="veg-callout veg-callout-one"><i></i><span><strong>Misir Wat</strong><small>Red lentils + berbere</small></span></div>
@@ -283,7 +283,7 @@ app.innerHTML = `
         <div class="coffee-visual reveal">
           <div class="coffee-halo" aria-hidden="true"></div>
           <figure class="coffee-photo">
-            <img src="${assetPath('assets/gallery/coffee-ceremony.png')}" alt="A Hagere team member preparing a traditional Ethiopian coffee ceremony with incense and rows of small cups" width="1086" height="1448" loading="lazy" />
+            <img src="${assetPath('assets/gallery/coffee-ceremony.webp')}" alt="A Hagere team member preparing a traditional Ethiopian coffee ceremony with incense and rows of small cups" width="1086" height="1448" loading="lazy" />
             <figcaption><span lang="am">ቡና</span><small>Prepared to be shared</small></figcaption>
           </figure>
           <div class="steam steam-one"></div><div class="steam steam-two"></div>
@@ -311,15 +311,15 @@ app.innerHTML = `
         </div>
         <div class="inside-gallery reveal">
           <figure class="inside-wide">
-            <img src="${assetPath('assets/gallery/dining-room.png')}" alt="Wide view of Hagere's colourful dining room and front counter" width="1448" height="1086" loading="lazy" />
+            <img src="${assetPath('assets/gallery/dining-room.webp')}" alt="Wide view of Hagere's colourful dining room and front counter" width="1448" height="1086" loading="lazy" />
             <figcaption><span>01</span> The dining room</figcaption>
           </figure>
           <figure class="inside-wide">
-            <img src="${assetPath('assets/gallery/dining-room-2.png')}" alt="Hagere interior with traditional decor, tables and coffee bar" width="1448" height="1086" loading="lazy" />
+            <img src="${assetPath('assets/gallery/dining-room-2.webp')}" alt="Hagere interior with traditional decor, tables and coffee bar" width="1448" height="1086" loading="lazy" />
             <figcaption><span>02</span> Details everywhere</figcaption>
           </figure>
           <figure class="inside-tall">
-            <img src="${assetPath('assets/gallery/dining-corner.png')}" alt="Interior corner at Hagere with Ethiopian decor and a giraffe sculpture" width="1082" height="1454" loading="lazy" />
+            <img src="${assetPath('assets/gallery/dining-corner.webp')}" alt="Interior corner at Hagere with Ethiopian decor and a giraffe sculpture" width="1082" height="1454" loading="lazy" />
             <figcaption><span>03</span> A sense of place</figcaption>
           </figure>
         </div>
@@ -329,7 +329,7 @@ app.innerHTML = `
     <section class="gatherings section" id="gatherings" aria-labelledby="gatherings-title">
       <div class="content-shell">
         <div class="gathering-card reveal">
-          <img src="${assetPath('assets/gallery/guests-dining.png')}" alt="Guests sharing a generous Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
+          <img src="${assetPath('assets/gallery/guests-dining.webp')}" alt="Guests sharing a generous Ethiopian meal together inside Hagere" width="1448" height="1086" loading="lazy" />
           <div class="gathering-overlay"></div>
           <div class="gathering-copy">
             <p class="eyebrow light">Bring everyone <span>05</span></p>
@@ -346,8 +346,8 @@ app.innerHTML = `
             <p>Ask Hagere about generous platters, injera, and dishes prepared for groups.</p>
             <button class="arrow-link" type="button" data-catering-trigger>Plan a group order ${icon('arrow', 'icon')}</button>
           </div>
-          <figure><img src="${assetPath('assets/gallery/catering-platter.jpg')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" loading="lazy" /><figcaption>Ready to share</figcaption></figure>
-          <figure><img src="${assetPath('assets/gallery/catering-tray.jpg')}" alt="A catering tray with rolled injera and seasoned stuffed peppers" width="960" height="1280" loading="lazy" /><figcaption>Prepared for groups</figcaption></figure>
+          <figure><img src="${assetPath('assets/gallery/catering-platter.webp')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" loading="lazy" /><figcaption>Ready to share</figcaption></figure>
+          <figure><img src="${assetPath('assets/gallery/catering-tray.webp')}" alt="A catering tray with rolled injera and seasoned stuffed peppers" width="960" height="1280" loading="lazy" /><figcaption>Prepared for groups</figcaption></figure>
         </div>
       </div>
     </section>
@@ -390,7 +390,7 @@ app.innerHTML = `
     <div class="content-shell">
       <div class="footer-top">
         <div>
-          <a class="brand brand-light" href="#top" aria-label="Hagere Ethiopian Restaurant, back to top"><img class="brand-logo brand-logo-footer" src="${assetPath('assets/pics/logo.png')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" loading="lazy" /></a>
+          <a class="brand brand-light" href="#top" aria-label="Hagere Ethiopian Restaurant, back to top"><img class="brand-logo brand-logo-footer" src="${assetPath('assets/pics/logo.webp')}" alt="Hagere Ethiopian Restaurant" width="1682" height="935" loading="lazy" /></a>
           <p>Modern hospitality shaped by Ethiopian tradition.</p>
         </div>
         <div class="footer-invite"><span lang="am">እንብላ</span><small>Let’s eat.</small></div>
@@ -444,7 +444,7 @@ app.innerHTML = `
     <div class="catering-dialog-shell">
       <button class="catering-dialog-close" type="button" aria-label="Close catering request form" data-catering-close>${icon('close', 'icon')}</button>
       <aside class="catering-dialog-story">
-        <img src="${assetPath('assets/gallery/catering-platter.jpg')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" />
+        <img src="${assetPath('assets/gallery/catering-platter.webp')}" alt="A catering platter arranged with folded injera, eggs and sauce" width="1019" height="1280" />
         <div>
           <p class="eyebrow light">Gather around</p>
           <h2>Let’s plan a table <em>worth sharing.</em></h2>
